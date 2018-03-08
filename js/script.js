@@ -42,8 +42,13 @@ $(document).ready(function(){
       url: giphyURL,
       method: "GET",
       success: function(response) {
-           var url = response.data[0].images.original.url;
+           var random = Math.floor((Math.random() * response.data.length) + 1);
+           var url = response.data[random].images.original.url;
            appendImageToGallery(url);
+           
+           
+           //for (var i = 0; i < .length-1; i++) { 
+          
       },
     }); 
   }
